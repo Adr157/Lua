@@ -3,16 +3,16 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { GenerateContentResponse } from '@google/genai';
 import { AppMode, ChatMessage, ChatRole, UploadedFile, ChatHistoryItem, GroundingChunk } from './types';
 import { LUA_SYSTEM_PROMPT, FILE_EDITOR_SYSTEM_PROMPT, IMAGE_GENERATION_PROMPT_PREFIX, GENERAL_CHAT_SYSTEM_PROMPT, APP_TITLE } from './constants';
-import { generateText, generateImage, streamTextResponse } from './services/geminiService';
-import AnimatedBackground from './components/AnimatedBackground';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import ChatInput from './components/ChatInput';
-import ChatMessageDisplay from './components/ChatMessage';
-import FileUpload from './components/FileUpload';
-import CodeDisplay from './components/CodeDisplay';
-import GeneratedImageDisplay from './components/GeneratedImageDisplay';
-import TrashIcon from './components/icons/TrashIcon'; // For Clear Chat
+import { generateText, generateImage, streamTextResponse } from './geminiService';
+import AnimatedBackground from './AnimatedBackground';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import ChatInput from './ChatInput';
+import ChatMessageDisplay from './ChatMessage';
+import FileUpload from './FileUpload';
+import CodeDisplay from './CodeDisplay';
+import GeneratedImageDisplay from './GeneratedImageDisplay';
+import TrashIcon from './TrashIcon'; // For Clear Chat
 
 const App: React.FC = () => {
   const [currentMode, setCurrentMode] = useState<AppMode>(AppMode.LUA_CHAT);
