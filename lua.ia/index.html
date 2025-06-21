@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lua.ia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif; /* A clean, modern font */
+    }
+    /* Custom scrollbar for a more integrated look */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05); /* Slightly more transparent */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(129, 140, 248, 0.5); /* Indigo-400 with opacity */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(129, 140, 248, 0.7); /* Indigo-400 */
+    }
+    /* For Firefox */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(129, 140, 248, 0.5) rgba(255, 255, 255, 0.05);
+    }
+    /* Custom keyframes for more diverse star twinkling */
+    @keyframes twinkle-opacity-1 {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.8; }
+    }
+    @keyframes twinkle-opacity-2 {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    @keyframes twinkle-opacity-3 {
+      0%, 100% { opacity: 0.1; }
+      50% { opacity: 0.6; }
+    }
+    .animate-twinkle-1 {
+      animation: twinkle-opacity-1 3s infinite ease-in-out;
+    }
+    .animate-twinkle-2 {
+      animation: twinkle-opacity-2 4s infinite ease-in-out;
+    }
+    .animate-twinkle-3 {
+      animation: twinkle-opacity-3 5s infinite ease-in-out;
+    }
+
+    /* Message entry animation */
+    @keyframes message-in {
+      from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .animate-message-in {
+      animation: message-in 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    }
+
+    /* Ensure focus rings are visible and themed */
+    *:focus-visible {
+        outline: 2px solid rgb(129, 140, 248, 0.8) !important; /* Indigo-400 */
+        outline-offset: 2px !important;
+    }
+    textarea:focus-visible, input:focus-visible {
+         border-color: rgb(129, 140, 248, 0.8) !important;
+    }
+
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^18.2.0",
+    "react/": "https://esm.sh/react@^18.2.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.5.1",
+    "react-dom/client": "https://esm.sh/react-dom@^18.2.0/client",
+    "react-dom": "https://esm.sh/react-dom@^18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@^18.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
